@@ -22,6 +22,7 @@
 #include <opencv2/opencv.hpp>
 
 #include "Map.h"
+
 int main(int argc, char *argv[]) {
   std::ofstream fout("log.map", std::ios::binary);
 
