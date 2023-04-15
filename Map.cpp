@@ -36,7 +36,7 @@ void MapClass::output(std::ofstream &fout) {
   fout << HEIGHT   << "\n";
   fout << WIDTH    << "\n";
   fout << csize    << "\n";
-  fout << channel  << "\n";
+  fout << num_channel  << "\n";
   fout << ORIGIN_X << "\n";
   fout << ORIGIN_Y << "\n";
   for (auto d: map) {
@@ -54,7 +54,7 @@ void MapClass::read_map(std::string fname) {
     std::cout << fname << " is not map file\n";
     return;
   }
-  fin >> HEIGHT >> WIDTH >> csize >> channel >> ORIGIN_X >> ORIGIN_Y;
+  fin >> HEIGHT >> WIDTH >> csize >> num_channel >> ORIGIN_X >> ORIGIN_Y;
   fin.read((char*)&r, sizeof(r));   // ORIGIN_Yの後ろの改行を読み飛ばす
   for (int y = 0; y < HEIGHT; y++) {
     for (int x = 0; x < WIDTH; x++) {
@@ -89,11 +89,11 @@ cv::Mat MapClass::map2img() { // ch1 をcv::Mat に変換する（グレース�
   return img;
 }
 
-void MapClass::img2map(cv::Mat &img, double csize, int channel, int ORIGIN_X, int ORIGIN_Y) {
+void MapClass::img2map(cv::Mat &img, double csize, int num_channel, int ORIGIN_X, int ORIGIN_Y) {
   HEIGHT = img.rows;
   WIDTH  = img.cols;
   this->csize = csize;
-  this->channel = channel;
+  this->num_channel = num_channel;
   this->ORIGIN_X = ORIGIN_X;
   this->ORIGIN_Y = ORIGIN_Y;
   for (int y = 0; y < HEIGHT; y++) {
