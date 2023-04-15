@@ -61,7 +61,7 @@ int main(int argc, char *argv[]) {
   //cv::waitKey();
 
   MapClass map3;
-  cv::Mat img3 = cv::imread("occMap.png");
+  cv::Mat img3 = cv::imread("sample_map/occMap.png");
   map3.img2map(img3, 0.025, 4, 132, 372);
   map3.output(fout);
   fout.close();
