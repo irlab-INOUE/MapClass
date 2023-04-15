@@ -32,16 +32,10 @@ map.set_ORIGIN_X(50);
 map.set_ORIGIN_Y(40);
 
 // ここから地図の1ピクセル毎の処理
-// 例として以下の情報を格納する
-uint8_t c1 = 0x7F; // =
-uint8_t c2 = 0x00; // >
-uint8_t c3 = 0x00; // ?
-uint8_t c4 = 0x00; // @
-
 for (int y = 0; y < map.HEIGHT; y++) {
   for (int x = 0; x < map.WIDTH; x++) {
       uint32_t a = c1 << 24 | c2 << 16 | c3 << 8 | c4;
-      map.set_pixel(CH::ch1, x, y, c1);
+      map.set_pixel(CH::ch1, x, y, 0x7F);   // 例としてch1に0x7Fを格納している
   }
 }
 map.show();
