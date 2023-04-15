@@ -10,5 +10,6 @@ link_directories(${PROJECT_SOURCE_DIR})
 find_package (OpenCV REQUIRED)
 
 add_executable (main main.cpp Map.cpp)
-add_executable (binary binary.cpp)
+add_executable (map_reader map_reader.cpp Map.cpp)
 target_link_libraries(main ${OpenCV_LIBRARIES})
+target_link_libraries(map_reader ${OpenCV_LIBRARIES})

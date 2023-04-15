@@ -15,15 +15,15 @@ enum class CH : uint8_t {
 
 class MapClass {
 private:
-  double csize;
   int num_channel;   // 0:占有値 1:作業1 2:作業2 3:作業3 
-  int ORIGIN_X;
-  int ORIGIN_Y;
   std::vector<uint32_t> map;
 
 public:
   int WIDTH;
   int HEIGHT;
+  int ORIGIN_X;
+  int ORIGIN_Y;
+  double csize;
 
   MapClass() {};
   void set_WIDTH(int val) {WIDTH = val;};
@@ -39,6 +39,7 @@ public:
   void output(std::ofstream &fout);
   void read_map(std::string fname);
   void show();
+  void show_config();
   cv::Mat map2img(); // ch1 をcv::Mat に変換する（グレースケール画像）
   void img2map(cv::Mat &img, double csize, int num_channel, int ORIGIN_X, int ORIGIN_Y);
 };

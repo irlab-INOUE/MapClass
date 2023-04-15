@@ -111,3 +111,13 @@ void MapClass::img2map(cv::Mat &img, double csize, int num_channel, int ORIGIN_X
     }
   }
 }
+
+void MapClass::show_config() {
+  std::cout 
+    << "WIDTH:  " << WIDTH << "\n"
+    << "HEIGHT: " << HEIGHT << "\n"
+    << "csize: " << csize << "\n"
+    << "channel: " << num_channel << "\n"
+    << "ORIGIN_X: " << ORIGIN_X << "\n"
+    << "ORIGIN_Y: " << ORIGIN_Y << "\n";
+}
