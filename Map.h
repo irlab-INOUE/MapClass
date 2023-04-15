@@ -34,6 +34,7 @@ public:
   void set_ORIGIN_Y(int val) {ORIGIN_Y = val;};
   //void set_map(uint32_t val) {map.emplace_back(val);};
   void set_pixel(CH channel, int x, int y, uint8_t val);
+  void set_pixel_metric(CH channel, double x, double y, uint8_t val);
 
   void output(std::ofstream &fout);
   void read_map(std::string fname);

@@ -68,6 +68,7 @@ int main(int argc, char *argv[]) {
 
   MapClass map4;
   map4.read_map("log.map");
+  //map4.set_pixel_metric(CH::ch1, 0, 0, 0x00);
   map4.show();
 
   return 0;

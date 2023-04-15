@@ -31,6 +31,13 @@ void MapClass::set_pixel(CH channel, int x, int y, uint8_t val) {
   map[y*WIDTH + x] = orig;
 }
 
+void MapClass::set_pixel_metric(CH channel, double x, double y, uint8_t val) {
+  int ix = x/csize + ORIGIN_X;
+  int iy =-y/csize + ORIGIN_Y;
+  if (ix >= 0 && ix < WIDTH && iy >= 0 && iy < HEIGHT)
+    set_pixel(channel, ix, iy, val);
+}
+
 void MapClass::output(std::ofstream &fout) {
   fout << "MAP"    << "\n";
   fout << HEIGHT   << "\n";
